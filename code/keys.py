@@ -1,15 +1,15 @@
 from talon import Context, Module, actions, app
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "air bat cap doo each fine gust ham ivy jump kill look mike naow off pit quench red sun tock yew vest well plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
 
-default_digits = "zero one two three four five six seven eight nine".split(" ")
-numbers = [str(i) for i in range(10)]
-default_f_digits = (
-    "one two three four five six seven eight nine ten eleven twelve".split(" ")
-)
+# default_digits = "zero one two three four five six seven eight nine".split(" ")
+# numbers = [str(i) for i in range(10)]
+# default_f_digits = "one two three four five six seven eight nine ten eleven twelve".split(
+#     " "
+# )
 
 mod = Module()
 mod.list("letter", desc="The spoken phonetic alphabet")
@@ -110,10 +110,10 @@ def letters(m) -> str:
 ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
+    "xalt": "alt",  #'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
     "shift": "shift",  #'sky':     'shift',
-    "super": "super",
+    # "super": "super",
 }
 if app.platform == "mac":
     modifier_keys["command"] = "cmd"
@@ -130,29 +130,29 @@ punctuation_words = {
     "`": "`",
     ",": ",",  # <== these things
     "back tick": "`",
-    "grave": "`",
+    # "grave": "`",
     "comma": ",",
     "period": ".",
-    "full stop": ".",
+    # "full stop": ".",
     "semicolon": ";",
     "colon": ":",
     "forward slash": "/",
     "question mark": "?",
     "exclamation mark": "!",
-    "exclamation point": "!",
+    # "exclamation point": "!",
     "asterisk": "*",
     "hash sign": "#",
-    "number sign": "#",
+    # "number sign": "#",
     "percent sign": "%",
     "at sign": "@",
     "and sign": "&",
     "ampersand": "&",
     # Currencies
     "dollar sign": "$",
-    "pound sign": "£",
+#     "pound sign": "£",
 }
 symbol_key_words = {
-    "dot": ".",
+    # "dot": ".",
     "point": ".",
     "quote": "'",
     "question": "?",
@@ -167,6 +167,7 @@ symbol_key_words = {
     "minus": "-",
     "dash": "-",
     "equals": "=",
+    "relation": "=",
     "plus": "+",
     "tilde": "~",
     "bang": "!",
@@ -177,7 +178,7 @@ symbol_key_words = {
     "left paren": "(",
     "R paren": ")",
     "right paren": ")",
-    "brace": "{",
+    "L brace": "{",
     "left brace": "{",
     "brack": "{",
     "bracket": "{",
@@ -187,7 +188,7 @@ symbol_key_words = {
     "r brack": "}",
     "r bracket": "}",
     "right bracket": "}",
-    "angle": "<",
+    "langle": "<",
     "left angle": "<",
     "less than": "<",
     "rangle": ">",
@@ -197,21 +198,21 @@ symbol_key_words = {
     "star": "*",
     "hash": "#",
     "percent": "%",
-    "caret": "^",
-    "amper": "&",
-    "pipe": "|",
+    "exponent": "^",
+    # "amper": "&",
+    "pipeline": "|",
     "dubquote": '"',
     "double quote": '"',
     # Currencies
     "dollar": "$",
-    "pound": "£",
+#     "pound": "£",
 }
 
 # make punctuation words also included in {user.symbol_keys}
 symbol_key_words.update(punctuation_words)
 ctx.lists["self.punctuation"] = punctuation_words
 ctx.lists["self.symbol_key"] = symbol_key_words
-ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
+# ctx.lists["self.number_key"] = dict(zip(default_digits, numbers))
 ctx.lists["self.arrow_key"] = {
     "down": "down",
     "left": "left",
@@ -220,11 +221,11 @@ ctx.lists["self.arrow_key"] = {
 }
 
 simple_keys = [
-    "end",
+    # "end",
     "enter",
     "escape",
-    "home",
-    "insert",
+    # "home",
+    # "insert",
     "pagedown",
     "pageup",
     "space",
@@ -232,12 +233,15 @@ simple_keys = [
 ]
 
 alternate_keys = {
+    "destroy": "backspace",
+    "forward destroy": "delete",
     "wipe": "backspace",
     "delete": "backspace",
     #'junk': 'backspace',
     "forward delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
+    "flee": "escape",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
@@ -247,9 +251,9 @@ if app.platform in ("windows", "linux"):
 special_keys = {k: k for k in simple_keys}
 special_keys.update(alternate_keys)
 ctx.lists["self.special_key"] = special_keys
-ctx.lists["self.function_key"] = {
-    f"F {default_f_digits[i]}": f"f{i + 1}" for i in range(12)
-}
+# ctx.lists["self.function_key"] = {
+#     f"F {default_f_digits[i]}": f"f{i + 1}" for i in range(12)
+# }
 
 
 @mod.action_class

@@ -1,10 +1,16 @@
-double dash: "--"
+question [mark]: "?"
+(downscore | underscore): "_"
+# double dash: "--"
+(bracket | left bracket): "{"
+(are bracket | right bracket): "}"
 triple quote: "'''"
-(triple grave | triple back tick | gravy):
+(triple back tick):
     insert("```")
-(dot dot | dotdot): ".."
+semi end: ";;"
+# (dot dot | dotdot): ".."
 ellipses: "..."
 (comma and | spamma): ", "
+plus: "+"
 arrow: "->"
 dub arrow: "=>"
 new line: "\\n"
@@ -42,6 +48,6 @@ quote that:
 (double quote | dubquote) that:
     text = edit.selected_text()
     user.paste('"{text}"')
-(grave | back tick) that:
+(back tick) that:
     text = edit.selected_text()
     user.paste('`{text}`')

@@ -16,12 +16,18 @@ def add_tag(tag: str):
     ctx.tags = list(tags)
 
 
+default_names = [
+    "code",
+    "Visual Studio Code",
+    "Code",
+    "VSCodium",
+    "Codium",
+    "code-oss"
+]
+
 def remove_tag(tag: str):
     tags.discard(tag)
     ctx.tags = list(tags)
-
-
-default_names = ["Visual Studio Code", "Code", "VSCodium", "Codium", "code-oss"]
 
 setting_editor_names = mod.setting(
     "draft_editor",

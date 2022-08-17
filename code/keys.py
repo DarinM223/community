@@ -1,7 +1,4 @@
-from typing import Set
-
-from talon import Module, Context, actions, app
-import sys
+from talon import Context, Module, actions, app
 
 default_alphabet = "air bat cap doo each fine gust ham ivy jump kill look mike naow off pit quench red sun tock yew vest well plex yank zip".split(
     " "
@@ -118,7 +115,7 @@ modifier_keys = {
     "shift": "shift",  #'sky':     'shift',
     # "super": "super",
 }
-if app.platform  == "mac":
+if app.platform == "mac":
     modifier_keys["command"] = "cmd"
     modifier_keys["option"] = "alt"
 ctx.lists["self.modifier_key"] = modifier_keys
@@ -150,7 +147,6 @@ punctuation_words = {
     "at sign": "@",
     "and sign": "&",
     "ampersand": "&",
-
     # Currencies
     "dollar sign": "$",
 #     "pound sign": "£",
@@ -159,6 +155,7 @@ symbol_key_words = {
     # "dot": ".",
     "point": ".",
     "quote": "'",
+    "question": "?",
     "apostrophe": "'",
     "L square": "[",
     "left square": "[",
@@ -175,7 +172,7 @@ symbol_key_words = {
     "tilde": "~",
     "bang": "!",
     "down score": "_",
-    "under score": "_",
+    "underscore": "_",
     "paren": "(",
     "L paren": "(",
     "left paren": "(",
@@ -183,8 +180,14 @@ symbol_key_words = {
     "right paren": ")",
     "L brace": "{",
     "left brace": "{",
-    "R brace": "}",
+    "brack": "{",
+    "bracket": "{",
+    "left bracket": "{",
+    "r brace": "}",
     "right brace": "}",
+    "r brack": "}",
+    "r bracket": "}",
+    "right bracket": "}",
     "langle": "<",
     "left angle": "<",
     "less than": "<",
@@ -200,7 +203,6 @@ symbol_key_words = {
     "pipeline": "|",
     "dubquote": '"',
     "double quote": '"',
-
     # Currencies
     "dollar": "$",
 #     "pound": "£",
@@ -233,7 +235,10 @@ simple_keys = [
 alternate_keys = {
     "destroy": "backspace",
     "forward destroy": "delete",
-#     'junk': 'backspace',
+    "wipe": "backspace",
+    "delete": "backspace",
+    #'junk': 'backspace',
+    "forward delete": "delete",
     "page up": "pageup",
     "page down": "pagedown",
     "flee": "escape",
@@ -251,3 +256,12 @@ ctx.lists["self.special_key"] = special_keys
 # }
 
 
+@mod.action_class
+class Actions:
+    def move_cursor(s: str):
+        """Given a sequence of directions, eg. 'left left up', moves the cursor accordingly using edit.{left,right,up,down}."""
+        for d in s.split():
+            if d in ("left", "right", "up", "down"):
+                getattr(actions.edit, d)()
+            else:
+                raise RuntimeError(f"invalid arrow key: {d}")

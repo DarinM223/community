@@ -1,4 +1,4 @@
-from talon import ctrl, ui, Module, Context, actions, clip, app
+from talon import Context, Module, actions
 
 mod = Module()
 ctx = Context()
@@ -10,6 +10,8 @@ os: windows
 and app.name: Microsoft Edge
 os: windows
 and app.exe: msedge.exe
+os: mac
+and app.bundle: com.microsoft.edgemac
 """
 
 ctx.matches = r"""

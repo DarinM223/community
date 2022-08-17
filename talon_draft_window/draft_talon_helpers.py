@@ -1,5 +1,7 @@
 from typing import Optional
-from talon import ui, settings, Module, Context, actions
+
+from talon import Context, Module, actions, settings, ui
+
 from .draft_ui import DraftManager
 
 mod = Module()
@@ -72,7 +74,7 @@ class ContextSensitiveDictationActions:
     see https://github.com/knausj85/knausj_talon/pull/356
     """
 
-    def dictation_peek_left(clobber=False):
+    def dictation_peek_left():
         area = draft_manager.area
         return area[max(0, area.sel.left - 50) : area.sel.left]
 

@@ -1,5 +1,5 @@
 user.draft_editor_running: True
-not app: draft_editor
+not tag: user.draft_editor_app_focused
 -
 
 draft this:
@@ -12,3 +12,14 @@ draft all:
 draft line:
 	edit.select_line()
 	user.draft_editor_open()
+
+draft top:
+  edit.extend_file_start()
+  user.draft_editor_open()
+
+draft bottom:
+  edit.extend_file_end()
+  user.draft_editor_open()
+
+draft submit:
+  user.draft_editor_paste_last()

@@ -40,7 +40,7 @@ go way down:
 
 go way up:
     edit.file_start()
-    
+
 go bottom:
     edit.file_end()
     
@@ -217,3 +217,6 @@ cut line:
     edit.select_line()
     edit.cut()
 
+(pace | paste) all:
+  edit.select_all()
+  edit.paste()

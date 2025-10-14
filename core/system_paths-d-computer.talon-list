@@ -1,0 +1,15 @@
+list: user.system_paths
+hostname: d-computer
+-
+user: /home/d
+profile: /home/d
+desktop: /home/d/Desktop
+desk: /home/d/Desktop
+documents: /home/d/Documents
+docks: /home/d/Documents
+downloads: /home/d/Downloads
+music: /home/d/Music
+pictures: /home/d/Pictures
+videos: /home/d/Videos
+talon home: /home/d/.talon
+talon user: /home/d/.talon/user

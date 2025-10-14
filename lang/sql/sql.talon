@@ -1,4 +1,4 @@
-tag: user.sql
+code.language: sql
 -
 tag(): user.code_operators_math
 tag(): user.code_comment_line
@@ -22,16 +22,7 @@ inner join using: user.insert_between("INNER JOIN ", " USING ")
 left outer join: user.insert_between("LEFT OUTER JOIN ", " ON ")
 right outer join: user.insert_between("RIGHT OUTER JOIN ", " ON ")
 
-with:
-    key(enter up)
-    "WITH  AS ("
-    key(enter tab)
-    "SELECT "
-    key(enter shift-tab)
-    edit.extend_line_end()
-    edit.delete()
-    ") "
-    key(delete up:2 right:3)
+with: user.insert_snippet_by_name("withStatement")
 
 column:
     key(return)

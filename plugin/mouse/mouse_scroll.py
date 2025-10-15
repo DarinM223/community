@@ -81,6 +81,8 @@ mod.tag(
 @imgui.open(x=700, y=0)
 def gui_wheel(gui: imgui.GUI):
     gui.text(f"Scroll mode: {continuous_scroll_mode}")
+    direction = 'up' if hiss_scroll_up else 'down'
+    gui.text(f'Scroll direction: {direction}')
     gui.text(f"say a number between 0 and 99 to set scrolling speed")
     gui.line()
     if gui.button("[Wheel] Stop"):
@@ -215,6 +217,13 @@ class Actions:
         """Change mouse hiss scroll direction to down"""
         global hiss_scroll_up
         hiss_scroll_up = False
+
+    def toggle_hiss():
+        """ Toggle mouse hiss scroll direction """
+        global hiss_scroll_up
+        hiss_scroll_up = not hiss_scroll_up
+        direction = 'up' if hiss_scroll_up else 'down'
+        gui_wheel.show()
 
 
 @ctx.action_class("user")

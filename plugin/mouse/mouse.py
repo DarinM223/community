@@ -111,25 +111,27 @@ class UserActions:
             if actions.user.mouse_scroll_stop():
                 dont_click = True
 
-        if dont_click:
-            return
+        actions.user.toggle_hiss()
+        # actions.edit.page_up()
+        # if dont_click:
+        #     return
 
         # Otherwise respect the mouse_enable_pop_click setting
-        setting_val = settings.get("user.mouse_enable_pop_click")
+        # setting_val = settings.get("user.mouse_enable_pop_click")
 
-        is_using_eye_tracker = (
-            actions.tracking.control_zoom_enabled()
-            or actions.tracking.control_enabled()
-            or actions.tracking.control1_enabled()
-        )
+        # is_using_eye_tracker = (
+        #     actions.tracking.control_zoom_enabled()
+        #     or actions.tracking.control_enabled()
+        #     or actions.tracking.control1_enabled()
+        # )
 
-        should_click = (
-            setting_val == 2 and not actions.tracking.control_zoom_enabled()
-        ) or (
-            setting_val == 1
-            and is_using_eye_tracker
-            and not actions.tracking.control_zoom_enabled()
-        )
+        # should_click = (
+        #     setting_val == 2 and not actions.tracking.control_zoom_enabled()
+        # ) or (
+        #     setting_val == 1
+        #     and is_using_eye_tracker
+        #     and not actions.tracking.control_zoom_enabled()
+        # )
 
-        if should_click:
-            ctrl.mouse_click(button=0, hold=16000)
+        # if should_click:
+        #     ctrl.mouse_click(button=0, hold=16000)

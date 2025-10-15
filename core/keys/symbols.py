@@ -20,7 +20,7 @@ symbols_for_create_spoken_forms = {
     "and": "&",
     # for emails
     "at": "@",
-    "dot": ".",
+    # "dot": ".",
     # for application names like "notepad++"
     "plus": "+",
 }
@@ -56,7 +56,7 @@ currency_symbols = [
 symbols = [
     Symbol("`", ["back tick"], ["grave"]),
     Symbol(",", ["comma", "coma"]),
-    Symbol(".", ["period", "full stop"], ["dot", "point"]),
+    Symbol(".", ["period", "full stop"], ["point"]),
     Symbol(";", ["semicolon"], ["semi"]),
     Symbol(":", ["colon"]),
     Symbol("?", ["question mark"], ["question"]),
@@ -81,9 +81,10 @@ symbols = [
     Symbol("}", None, ["R brace", "right brace","R curly bracket", "right curly bracket"]),
     Symbol("<", None, ["angle", "L Angle", "left angle", "less than"]),
     Symbol(">", None, ["rangle", "R angle", "right angle", "greater than"]),
-    Symbol("^", None, ["caret"]),
+    Symbol("^", None, ["exponent"]),
+    # Symbol("^", None, ["caret"]),
     Symbol("|", None, ["pipe"]),
-    Symbol("'", None, ["quote", "apostrophe"]),
+    Symbol("'", None, ["sing quote", "single quote", "apostrophe"]),
     Symbol('"', None, ["dub quote", "double quote"]),
 ]
 

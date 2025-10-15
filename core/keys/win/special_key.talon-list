@@ -3,7 +3,7 @@ os: windows
 os: linux
 -
 
-end: end
+# end: end
 home: home
 minus: minus
 enter: enter

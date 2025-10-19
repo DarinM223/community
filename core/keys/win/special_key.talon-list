@@ -4,7 +4,7 @@ os: linux
 -
 
 # end: end
-home: home
+# home: home
 minus: minus
 enter: enter
 page down: pagedown

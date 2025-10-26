@@ -13,8 +13,8 @@ round: ( )
 box: [ ]
 diamond: < >
 curly: { }
-twin: "' '"
-quad: '" "'
+twin quote: "' '"
+quad quote: '" "'
 # skis: ` `
 # percentages: % %
 # pad: space space

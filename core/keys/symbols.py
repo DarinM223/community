@@ -50,7 +50,7 @@ class Symbol:
 
 currency_symbols = [
     Symbol("$", ["dollar sign"], ["dollar"]),
-    Symbol("£", ["pound sign"], ["pound"]),
+    # Symbol("£", ["pound sign"], ["pound"]),
 ]
 
 symbols = [

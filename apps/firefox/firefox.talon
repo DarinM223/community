@@ -13,3 +13,7 @@ tab search <user.text>$:
 
 (sidebar | panel) bookmarks: user.firefox_bookmarks_sidebar()
 (sidebar | panel) history: user.firefox_history_sidebar()
+
+coma: browser.go_back()
+colon: key(down)
+go word: browser.go_forward()

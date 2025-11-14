@@ -12,3 +12,7 @@ tab search <user.text>$:
     sleep(200ms)
     insert("{text}")
     key(down)
+
+coma: browser.go_back()
+colon: key(down)
+go word: browser.go_forward()

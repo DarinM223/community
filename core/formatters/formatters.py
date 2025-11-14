@@ -359,7 +359,7 @@ class ImmuneString:
 @mod.capture(
     # Add anything else into this that you want to have inserted when
     # using a prose formatter.
-    rule="(<user.symbol_key> | (numb | numeral) <number>)"
+    rule="(<user.symbol_key> | (num | numb | numeral) <number>)"
 )
 def formatter_immune(m) -> ImmuneString:
     """Symbols and numbers that can be interspersed into a prose formatter

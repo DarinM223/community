@@ -8,7 +8,7 @@ tag set [{user.talon_tags}]:
     user.talon_code_enable_tag(tag)
 
 # requires user.talon_populate_lists tag. do not use with dragon
-list {user.talon_lists}: "{{{talon_lists}}}"
+# list {user.talon_lists}: "{{{talon_lists}}}"
 # requires user.talon_populate_lists tag. do not use with dragon
 capture {user.talon_captures}: "<{talon_captures}>"
 

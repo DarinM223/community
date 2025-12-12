@@ -29,7 +29,7 @@ settings():
     user.mouse_gaze_scroll_speed_multiplier = 1.0
 
     # Set the maximum acceleration factor when scrolling continuously. 1=constant speed/no acceleration.
-    user.mouse_continuous_scroll_acceleration = 1
+    user.mouse_continuous_scroll_acceleration = 1.3
 
     # If `true`, stop continuous scroll/gaze scroll with a pop
     user.mouse_enable_pop_stops_scroll = true
@@ -48,7 +48,7 @@ settings():
 
     # How much time a hiss must last for to be considered a hiss rather than
     # part of speech, in ms
-    user.hiss_scroll_debounce_time = 100
+    user.hiss_scroll_debounce_time = 150
 
     # If `true`, hide the continuous scroll/gaze scroll GUI
     user.mouse_hide_mouse_gui = false

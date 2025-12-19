@@ -5,7 +5,6 @@ code.language: cpp
 character: char
 double
 float
-int
 integer: int
 long
 long double: "long double"

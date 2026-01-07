@@ -3,16 +3,17 @@ code.language: c
 code.language: cpp
 -
 character: char
-double
+# double
 float
 integer: int
 long
 long double: "long double"
 long long: "long long"
 e num: enum
-short
+# short
 size tea: size_t
 struck: struct
 struct
 union
 void
+null pointer: NULL

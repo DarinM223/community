@@ -266,6 +266,12 @@ class Actions:
 
         return draft_manager.get_text()
 
+    def draft_clear_text():
+        """
+        Clears the text in the draft window
+        """
+        draft_manager.show("")
+
     def draft_resize(width: int, height: int):
         """
         Resize the draft window.

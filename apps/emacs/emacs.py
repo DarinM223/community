@@ -61,7 +61,6 @@ class Actions:
         example, if the setting user.emacs_meta = 'esc', user.emacs_key("meta-ctrl-a")
         becomes key("esc ctrl-a").
         """
-        # TODO: handle corner-cases like key(" ") and key("ctrl- "), etc.
         actions.key(" ".join(meta_fixup(k) for k in keys.split()))
 
     def emacs_prefix(n: Optional[int] = None):
@@ -356,7 +355,7 @@ class CodeActions:
 
     def language():
         # Assumes win.filename() gives buffer name.
-        if "*scratch*" == actions.win.filename():
+        if actions.win.filename() == "*scratch*":
             return "elisp"
         return actions.next()
 

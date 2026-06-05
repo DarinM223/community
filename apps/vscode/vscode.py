@@ -25,6 +25,10 @@ and app.bundle: com.exafunction.windsurf
 """
 mod.apps.vscode = """
 os: linux
+and app.name: Visual Studio Code
+os: linux
+and app.name: code
+os: linux
 and app.name: Code
 os: linux
 and app.name: code-oss

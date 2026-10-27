@@ -15,6 +15,7 @@ execute <user.text>$:
     user.emacs("execute-extended-command")
     user.insert_formatted(text, "DASH_SEPARATED")
 evaluate | (evaluate | eval) (exper | expression): user.emacs("eval-expression")
+(evaluate | eval) file: user.emacs("eval-file")
 prefix: user.emacs_prefix()
 prefix <user.number_signed_small>: user.emacs_prefix(number_signed_small)
 
@@ -50,7 +51,8 @@ manual <user.text>:
 
 # BUFFER SWITCHING #
 switch: user.emacs("switch-to-buffer")
-other switch: user.emacs("switch-to-buffer-other-window")
+# other switch: user.emacs("switch-to-buffer-other-window")
+other switch: user.emacs("other-window")
 display: user.emacs("display-buffer")
 
 # SHELL COMMANDS #
@@ -232,13 +234,18 @@ go <number> bottom:
 next error | error next: user.emacs("next-error")
 last error | error last: user.emacs("previous-error")
 
+slurp right: user.emacs("slurp-right")
+slurp left: user.emacs("slurp-left")
+barf right: user.emacs("barf-right")
+barf left: user.emacs("barf-left")
+
 term right: user.emacs("forward-sexp")
 term left: user.emacs("backward-sexp")
 term up: user.emacs("backward-up-list")
 term end: user.emacs("up-list")
 term down: user.emacs("down-list")
 term kill: user.emacs("kill-sexp")
-term wipe: user.emacs("kill-sexp", -1)
+term kill backward: user.emacs("kill-sexp", -1)
 term (mark | select): user.emacs("mark-sexp")
 term copy:
     user.emacs("mark-sexp")

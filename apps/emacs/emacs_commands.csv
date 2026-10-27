@@ -18,7 +18,7 @@ clear-rectangle, ctrl-x r c
 clone-indirect-buffer,, clo-i
 comment-dwim, meta-;
 comment-line,, comment-l
-comment-region, ctrl-c ;
+comment-region, alt-;
 compile
 compile-defun,, co-def
 copy-rectangle-as-kill, ctrl-x r meta-w
@@ -44,7 +44,8 @@ electric-quote-mode
 end-of-buffer, meta->
 enlarge-window, ctrl-x ^
 enlarge-window-horizontally, ctrl-x }
-eval-expression, meta-:
+eval-expression, ctrl-meta-x
+eval-file, ctrl-c ctrl-k
 eval-print-last-sexp,, ev-p
 eval-region,, ev-r
 exchange-point-and-mark, ctrl-x ctrl-x
@@ -229,3 +230,7 @@ xref-find-references-and-replace
 xref-go-back,"meta-,"
 yank, ctrl-y
 yank-rectangle, ctrl-x r y
+slurp-right, ctrl-)
+slurp-left, ctrl-(
+barf-right, ctrl-}
+barf-left, ctrl-{
